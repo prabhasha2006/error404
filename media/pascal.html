@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>  
+<html lang="en">  
+<head> 
+<title>XCODEJET pascal IDE</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"/>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="Online Pascal Compiler - The best online Pascal programming compiler and editor provides an easy to use and simple Integrated Development Environment (IDE) for the students and working professionals to Edit, Save, Compile, Execute and Share Pascal source code with in your browser itself." />
+<base href="https://www.tutorialspoint.com">
+<link rel="shortcut icon" href="https://i.ibb.co/FXzs5hw/20221030-142037.png" type="image/x-icon" />
+<link rel="canonical" href="https://www.tutorialspoint.com/compile_pascal_online.php" />
+<link rel="stylesheet" type="text/css" href="https://www.tutorialspoint.com/themes/easyui/gray/easyui.css">
+<link rel="stylesheet" type="text/css" href="https://www.tutorialspoint.com/cg/style.css?v=106">
+<script id="adv" data-cfasync="false">(function(w, d) { var s = d.createElement('script'); s.src = '//cdn.adpushup.com/40046/adpushup.js'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script>
+</head>
+<body class="body easyui-layout" id="cc" style="visibility:hidden;">
+<div class="north" id="north" data-options="region:'north'">
+   <a href="editorpro.html"><img style="height:40px; width: 40px;" src="./xcodejet-logo.png" alt="Online Pascal Compiler" class="logo" id="logo"/></a>
+   
+   <h1 class="title" id="main-title">Online Pascal Compiler --</h1>
+   <a href="https://rextester.com">
+   <h1 class="title">[click here to other copilers]</a>
+   <h1 class="title">-- Powered By X-CODE-JET</h1>
+   <div class="easyui-panel main-menu" id="main-menu" data-options="border:false">
+   <a id="setting" href="javascript:void(0);" class="right-align easyui-menubutton" data-options="menu:'#mm3',iconCls:'fal fa-cog fa-lg'">Setting</a>
+   <a id="edit" href="javascript:void(0);" class="right-align easyui-menubutton" data-options="menu:'#mm2',iconCls:'fal fa-pen-to-square fa-lg'">Edit</a>
+   <a id="project" href="javascript:void(0);" class="right-align easyui-menubutton" data-options="menu:'#mm4', plain:true, iconCls:'fal fa-grid-2 fa-lg'">Project</a>
+   <a id="paste" data-options="iconCls:'fal fa-paste fa-sm'"  class="right-align easyui-menubutton">Paste</a>
+  </div>
+</div>
+<div id="loading"><div class="loader"></div></div>
+<div id="mm1" style="width:150px;">
+   <div onclick="getProjects()"  data-options="iconCls:'fal fa-grid-2 fa-sm'">My Projects</div>
+   <div class="menu-sep"></div>
+   <div onclick="openChangePassword()" data-options="iconCls:'fal fa-lock-keyhole fa-sm'">Change Password</div>
+   <div onclick="userProfile()" data-options="iconCls:'fal fa-user fa-sm'">My Profile</div>
+   <div class="menu-sep"></div>
+   <div onclick="userLogout()" data-options="iconCls:'fal fa-sign-out fa-sm'">Logout</div>
+</div>
+<div id="mm2" style="width:200px;">
+   <div id="undo" data-options="iconCls:'fal fa-rotate-left fa-sm'">Undo</div>
+   <div id="redo" data-options="iconCls:'fal fa-rotate-right fa-sm'">Redo</div>
+   <div class="menu-sep"></div>
+   <div id="cut" data-options="iconCls:'fal fa-scissors fa-sm'">Cut</div>
+   <div id="copy" data-options="iconCls:'fal fa-clone fa-sm'">Copy</div>
+   <div id="paste" data-options="iconCls:'fal fa-paste fa-sm'">Paste</div>
+   <div id="delete" data-options="iconCls:'fal fa-trash fa-sm'">Delete</div>
+   <div id="select" data-options="iconCls:'fal fa-check fa-sm'">Select All</div>
+   <div class="menu-sep"></div>
+   <div id="find" data-options="iconCls:'fal fa-magnifying-glass fa-sm'">Find</div>
+   <div id="findreplace" data-options="iconCls:'fal fa-magnifying-glass fa-sm'">Find and Replace</div>
+</div>
+<div id="mm3" style="width:200px;">
+   <div id="editor-theme" data-options="iconCls:'fal fa-input-text fa-sm'"><span>Editor Theme</span>
+           <div>
+                <div onclick="setEditorTheme('crimson_editor');">Crimson</div>
+                <div onclick="setEditorTheme('eclipse');">Eclipse</div>
+                <div onclick="setEditorTheme('github');">Github</div>
+                <div onclick="setEditorTheme('solarized_dark');">Solarized</div>
+                <div onclick="setEditorTheme('cobalt');">Cobalt</div>
+                <div onclick="setEditorTheme('kr_theme');">XCJTheme</div>
+                <div onclick="setEditorTheme('monokai');">Monokai</div>
+                <div onclick="setEditorTheme('terminal');">Terminal</div>
+                <div onclick="setEditorTheme('textmate');">Textmate</div>
+                <div onclick="setEditorTheme('twilight');">Twilight</div>
+                <div onclick="setEditorTheme('vibrant_ink');">XCodeJet</div>
+            </div>
+   </div>
+   <div id="font-size" data-options="iconCls:'fal fa-text-size fa-sm'"><span>Font Size</span>
+            <div>
+                <div onclick="setEditorFontSize('8');">8px</div>
+                <div onclick="setEditorFontSize('9');">9px</div>
+                <div onclick="setEditorFontSize('10');">10px</div>
+                <div onclick="setEditorFontSize('11');">11px</div>
+                <div onclick="setEditorFontSize('12');">12px</div>
+                <div onclick="setEditorFontSize('13');">13px</div>
+                <div onclick="setEditorFontSize('14');">14px</div>
+                <div onclick="setEditorFontSize('15');">15px</div>
+                <div onclick="setEditorFontSize('16');">16px</div>
+                <div onclick="setEditorFontSize('17');">17px</div>
+                <div onclick="setEditorFontSize('18');">18px</div>
+                <div onclick="setEditorFontSize('20');">20px</div>
+                <div onclick="setEditorFontSize('22');">22px</div>
+                <div onclick="setEditorFontSize('24');">24px</div>
+            </div>
+   </div>
+   <div id="tab-size" data-options="iconCls:'fal fa-arrow-right-to-line fa-sm'"><span>Tab Size</span>
+            <div>
+                <div onclick="setEditorTabSize('1');">1</div>
+                <div onclick="setEditorTabSize('2');">2</div>
+                <div onclick="setEditorTabSize('3');">3</div>
+                <div onclick="setEditorTabSize('4');">4</div>
+                <div onclick="setEditorTabSize('5');">5</div>
+                <div onclick="setEditorTabSize('6');">6</div>
+                <div onclick="setEditorTabSize('7');">7</div>
+                <div onclick="setEditorTabSize('8');">8</div>
+            </div>
+   </div>
+   <div class="menu-sep"></div>
+   <div onclick="setEditorInvisible(1);"  data-options="iconCls:'fal fa-eye fa-sm'">Show Invisible</div>
+   <div onclick="setEditorInvisible(0);" data-options="iconCls:'fal fa-eye-slash  fa-sm'">Hide Invisible</div>
+   <div class="menu-sep"></div>
+   <div onclick="setEditorGutter(1);" data-options="iconCls:'fal fa-list-ol fa-sm'">Show Line Numbers</div>
+   <div onclick="setEditorGutter(0);" data-options="iconCls:'fal fa-bars fa-sm'">Hide Line Numbers</div>
+
+</div>
+<div id="mm4" style="width:200px;">
+     <div onclick="createProject()" data-options="iconCls:'fal fa-arrow-up-right-from-square fa-sm'"><span>Open New Project</span></div>
+     <div onclick="saveProject();" data-options="iconCls:'fal fa-cloud-arrow-down fa-sm'">Save Project</div>
+     <div onclick="saveAsNewProject();" data-options="iconCls:'fal fa-cloud-arrow-down fa-sm'">Save As New Project</div>
+     <div onclick="generateShareLink();" data-options="iconCls:'fal fa-share-nodes fa-sm'">Share Project</div>
+     <div id="searchproject" onclick="openSearchProject();" data-options="iconCls:'fal fa-magnifying-glass fa-sm'">Search Project</div>
+</div><!--HEADER ENDS -->
+
+<div data-options="region:'west',split:true" id="west" style="width:45%;"><!--CODE AREA STARTS -->
+<div class="easyui-tabs" data-options="fit:true,border:false,tools:'#tab-tools',toolPosition:'left'" id="codebox" style="width:40%;">
+<div title="Source Code" id="editor">Program HelloWorld(output);
+begin
+  writeln('X CODE JET');
+end.
+</div>
+
+</div>
+</div>
+<div id="tab-tools" style="border-top:0px; border-right:0px;">
+   <a href="javascript:void(0)" id="execute"  class="easyui-linkbutton" data-options="plain:true,iconCls:'fal fa-gears fa-lg'" style="white-space:nowrap;">&nbsp;<b>Execute</b></a>
+   <span style="white-space:nowrap;" class="execute_space" id="space1">|</span>
+   <a href="javascript:void(0)" id="beautify"  class="easyui-linkbutton" data-options="plain:true,iconCls:'fal fa-display-code fa-lg'" style="white-space:nowrap;">&nbsp;<b>Beautify</b></a>
+   <span style="white-space:nowrap;" class="execute_space" id="space2">|</span>
+</div>
+<!-- CENTER STARTS -->
+<div id="center" data-options="region:'center',iconCls:'fal fa-rectangle-terminal fa-sm', title:'Terminal', split:true, tools:[{iconCls:'icon-clean', handler:function(){clearTerminal()}}]" style="width:45%;border-bottom: 0px;">
+<div class="easyui-accordion" id="accordion" style="width:100%;height:100%;border:0px;">
+<div id="terminal">
+</div>
+<!--Red Dragon-->
+<iframe id="result" style="height:100%; width:100%; border:0px;"></iframe>
+</div>
+</div><!--CENTER ENDS -->
+<!--EAST STARTS -->
+<div id="east" data-options="region:'east', title:'&nbsp;&nbsp;&nbsp;&nbsp;Advertisement', collapsible:false" style="overflow: hidden; width: 122px">
+
+</div>
+</div>
+<!--EAST ENDS -->
+<div id="south" data-options="region:'south',collapsible:true, split:true, tools:[{ iconCls:'icon-h-terminal', handler:function(){setTerminalMode('V')}}, {iconCls:'icon-clean', handler:function(){clearTerminal()}}]" style="height:0%; display: none;">
+</div><!--SOUTH ENDS -->
+
+<script>
+var HOME = "https://github.com/prabhasha2006/Online-Code-Editor";
+var langid = "pascal";
+var filename = "main.pas";
+var mainfile = "main.pas";
+var modename = "pascal";
+var version = "Free Pascal RED DRAGON";
+var opt = "new";
+var projectid = "";
+var projecttitle = "Online Pascal Compiler";
+var sessionId = "63389e241add0";
+</script>
+<script src="https://kit.fontawesome.com/d10db5a94a.js" crossorigin="anonymous"></script>
+<script src="https://www.tutorialspoint.com/themes/easyui/jquery.min.js"></script>
+<script src="https://www.tutorialspoint.com/themes/easyui/jquery.easyui.min.js"></script>
+<script src="/cg/libs/ace/src-min/ace.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
+<script src="/cg/script-min.js?v58"></script>
+<script>
+    
+_uacct = "UA-32077377-1";
+urchinTracker();
+</script>
+<script>
+    console.log(document.getElementById('terminal').innerHTML)
+    document.getElementsByClassName('class="ace_layer').innerHTML = "Aa"
+    //document.getElementById('terminal').innerHTML.replace('Free Pascal Compiler version 3.0.2 [2017/03/27] for x86_64',"")
+</script>
+</body>
+</html>
